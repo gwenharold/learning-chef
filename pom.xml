@@ -19,8 +19,8 @@
 	<modules>
     	<module>learning-core</module>
     	<module>learning-services</module>
-	<module>learning-webapp</module>
-  </modules>
+		<module>learning-webapp</module>
+  	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -34,6 +34,15 @@
 				<artifactId>learning-services</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+
+			<!-- mongodb -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-mongodb</artifactId>
+				<version>1.8.1.RELEASE</version>
+			</dependency>
+
+			<!-- elastic search -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-elasticsearch</artifactId>
