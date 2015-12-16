@@ -17,10 +17,13 @@
 	</properties>
 
 	<modules>
+		<!--
     	<module>learning-core</module>
     	<module>learning-services</module>
 		<module>learning-webapp</module>
-  	</modules>
+		-->
+    	<module>learning-app</module>
+  </modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -35,7 +38,7 @@
 				<version>${project.version}</version>
 			</dependency>
 
-			<!-- mongodb -->
+			<!-- spring data mongodb -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-mongodb</artifactId>
@@ -48,6 +51,15 @@
 				<artifactId>spring-data-elasticsearch</artifactId>
 				<version>${spring.data.elasticsearch.version}</version>
 			</dependency>
+
+			<!-- lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.16.6</version>
+			</dependency>
+
+			<!-- spring -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
