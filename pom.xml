@@ -22,7 +22,7 @@
     	<module>learning-services</module>
 		<module>learning-webapp</module>
 		-->
-    	<module>learning-app</module>
+    <module>learning-app</module>
   </modules>
 
 	<dependencyManagement>
