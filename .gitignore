@@ -2,3 +2,4 @@ learning-app/.classpath
 learning-app/.project
 learning-app/target/classes/.gitignore
 learning-app/target/
+learning-app/.settings/
