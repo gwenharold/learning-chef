@@ -1,8 +1,11 @@
 package com.autencio.learning.builder;
 
+import org.springframework.stereotype.Service;
+
 import com.autencio.learning.bean.AccountBean;
 import com.autencio.learning.domain.Account;
 
+@Service
 public class BeanBuilderImpl implements BeanBuilder {
 
 	@Override
@@ -11,4 +14,15 @@ public class BeanBuilderImpl implements BeanBuilder {
 		return accountBean;
 	}
 
+	@Override
+	public Account convert(AccountBean accountBean) {
+		
+		Account account = new Account();
+		if(accountBean.getId() != null) {
+			account.setId(account.getId());
+		}
+		account.setUsername(account.getUsername());
+		return account;
+		
+	}
 }

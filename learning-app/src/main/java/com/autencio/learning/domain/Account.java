@@ -9,6 +9,10 @@ public class Account {
 	
 	private String username;
 	
+	public Account() {
+		
+	}
+
 	public Account(String username) {
 		this.username = username;
 	}
@@ -27,5 +31,5 @@ public class Account {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
+	}	
 }

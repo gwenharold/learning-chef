@@ -1,10 +1,11 @@
 package com.autencio.learning.service;
 
+import com.autencio.learning.bean.AccountBean;
 import com.autencio.learning.domain.Account;
 
 public interface AccountService {
 
-	Account create(Account account);
+	AccountBean create(AccountBean accountBean);
 
 	void delete(String id);
 
