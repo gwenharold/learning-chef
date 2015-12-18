@@ -26,12 +26,10 @@ public class AccountController {
 
 		AccountBean accountCreated = accountService.create(accountBean);
 		return accountCreated;
-
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	List<AccountBean> findAll() {
-
 		return accountService.findAll();
 	}
 }

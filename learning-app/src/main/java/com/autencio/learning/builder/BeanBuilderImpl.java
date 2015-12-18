@@ -19,9 +19,9 @@ public class BeanBuilderImpl implements BeanBuilder {
 		
 		Account account = new Account();
 		if(accountBean.getId() != null) {
-			account.setId(account.getId());
+			account.setId(accountBean.getId());
 		}
-		account.setUsername(account.getUsername());
+		account.setUsername(accountBean.getUsername());
 		return account;
 		
 	}
