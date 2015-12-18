@@ -13,42 +13,18 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.1.8.RELEASE</spring.version>
-		<spring.data.elasticsearch.version>1.3.0.RELEASE</spring.data.elasticsearch.version>
 	</properties>
 
 	<modules>
-		<!--
-    	<module>learning-core</module>
-    	<module>learning-services</module>
-		<module>learning-webapp</module>
-		-->
     	<module>learning-app</module>
   	</modules>
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>com.learningsomething</groupId>
-				<artifactId>learning-core</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.learningsomething</groupId>
-				<artifactId>learning-services</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
 			<!-- spring data mongodb -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-mongodb</artifactId>
 				<version>1.8.1.RELEASE</version>
-			</dependency>
-
-			<!-- elastic search -->
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-elasticsearch</artifactId>
-				<version>${spring.data.elasticsearch.version}</version>
 			</dependency>
 
 			<!-- lombok -->
