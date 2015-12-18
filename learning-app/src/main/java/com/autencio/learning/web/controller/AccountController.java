@@ -19,7 +19,7 @@ public class AccountController {
 
 	@Autowired
 	private AccountService accountService;
-	
+
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	AccountBean create(@RequestBody AccountBean accountBean) {
@@ -31,7 +31,7 @@ public class AccountController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	List<AccountBean> findAll() {
-		
+
 		return accountService.findAll();
 	}
 }

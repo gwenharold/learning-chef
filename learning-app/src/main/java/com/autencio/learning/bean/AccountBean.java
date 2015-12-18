@@ -8,6 +8,14 @@ public class AccountBean {
 
 	private String username;
 	
+	public AccountBean() {
+		
+	}
+	
+	public AccountBean(String username) {
+		this.username = username;
+	}
+	
 	public AccountBean(Account account) {
 		this.id = account.getId();
 		this.username = account.getUsername();
