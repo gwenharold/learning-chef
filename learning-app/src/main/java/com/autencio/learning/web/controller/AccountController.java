@@ -1,5 +1,7 @@
 package com.autencio.learning.web.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,9 +23,15 @@ public class AccountController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	AccountBean create(@RequestBody AccountBean accountBean) {
-		
+
 		AccountBean accountCreated = accountService.create(accountBean);
 		return accountCreated;
 
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	List<AccountBean> findAll() {
+		
+		return accountService.findAll();
 	}
 }

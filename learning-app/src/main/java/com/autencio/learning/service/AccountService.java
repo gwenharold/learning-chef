@@ -1,5 +1,7 @@
 package com.autencio.learning.service;
 
+import java.util.List;
+
 import com.autencio.learning.bean.AccountBean;
 import com.autencio.learning.domain.Account;
 
@@ -9,7 +11,7 @@ public interface AccountService {
 
 	void delete(String id);
 
-	Iterable<Account> findAll();
+	List<AccountBean> findAll();
 
 	Account findById(String id);
 

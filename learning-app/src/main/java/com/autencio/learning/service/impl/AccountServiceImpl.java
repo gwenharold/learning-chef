@@ -1,5 +1,9 @@
 package com.autencio.learning.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,8 +38,14 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Iterable<Account> findAll() {
-		return accountRepository.findAll();
+	public List<AccountBean> findAll() {
+		Iterable<Account> result = accountRepository.findAll();
+		
+		List<AccountBean> list = new ArrayList<AccountBean>();
+		Consumer<Account> consumer = (Account a) -> list.add(beanBuilder.build(a));
+		result.forEach(consumer);
+
+		return list;
 	}
 
 	@Override
