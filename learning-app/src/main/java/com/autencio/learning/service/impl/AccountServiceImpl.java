@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.autencio.learning.bean.AccountBean;
 import com.autencio.learning.builder.BeanBuilder;
 import com.autencio.learning.domain.Account;
+import com.autencio.learning.exception.AccountNotFoundException;
 import com.autencio.learning.repository.AccountRepository;
 import com.autencio.learning.service.AccountService;
 
@@ -18,10 +19,10 @@ public class AccountServiceImpl implements AccountService {
 
 	@Autowired
 	private AccountRepository accountRepository;
-	
+
 	@Autowired
 	private BeanBuilder beanBuilder;
-	
+
 	@Override
 	public AccountBean create(AccountBean accountBean) {
 
@@ -37,17 +38,18 @@ public class AccountServiceImpl implements AccountService {
 		accountRepository.delete(account);
 		return beanBuilder.build(account);
 	}
-	
+
 	@Override
-	public AccountBean findByUsername(String username) {
-		Account account = accountRepository.findByUsername(username);
+	public AccountBean find(String username) {
+
+		Account account = findByUsername(username);
 		return beanBuilder.build(account);
 	}
 
 	@Override
 	public List<AccountBean> findAll() {
 		Iterable<Account> result = accountRepository.findAll();
-		
+
 		List<AccountBean> list = new ArrayList<AccountBean>();
 		Consumer<Account> consumer = (Account a) -> list.add(beanBuilder.build(a));
 		result.forEach(consumer);
@@ -65,4 +67,12 @@ public class AccountServiceImpl implements AccountService {
 		accountRepository.save(account);
 	}
 
+	private Account findByUsername(String username) {
+
+		Account account = accountRepository.findByUsername(username);
+		if (account == null) {
+			throw new AccountNotFoundException(username);
+		}
+		return account;
+	}
 }

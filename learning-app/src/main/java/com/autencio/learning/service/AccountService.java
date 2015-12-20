@@ -11,7 +11,7 @@ public interface AccountService {
 	
 	AccountBean delete(String username);
 	
-	AccountBean findByUsername(String username);
+	AccountBean find(String username);
 
 	List<AccountBean> findAll();
 
