@@ -8,8 +8,10 @@ import com.autencio.learning.domain.Account;
 public interface AccountService {
 
 	AccountBean create(AccountBean accountBean);
-
-	void delete(String id);
+	
+	AccountBean delete(String username);
+	
+	AccountBean findByUsername(String username);
 
 	List<AccountBean> findAll();
 

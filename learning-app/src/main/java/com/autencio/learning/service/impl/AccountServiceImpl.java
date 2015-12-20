@@ -32,9 +32,16 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void delete(String id) {
-		Account account = findById(id);
-		accountRepository.delete(account);	
+	public AccountBean delete(String username) {
+		Account account = accountRepository.findByUsername(username);
+		accountRepository.delete(account);
+		return beanBuilder.build(account);
+	}
+	
+	@Override
+	public AccountBean findByUsername(String username) {
+		Account account = accountRepository.findByUsername(username);
+		return beanBuilder.build(account);
 	}
 
 	@Override

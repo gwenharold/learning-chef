@@ -9,7 +9,7 @@ import lombok.Data;
 public class Account {
 
 	private String id;
-	
+
 	private String username;
 	
 	public Account() {

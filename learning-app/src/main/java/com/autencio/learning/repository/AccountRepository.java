@@ -6,4 +6,5 @@ import com.autencio.learning.domain.Account;
 
 public interface AccountRepository extends CrudRepository<Account, String>{
 
+	Account findByUsername(String username);
 }
