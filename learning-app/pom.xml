@@ -98,6 +98,13 @@
 			<version>1.16.6</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>19.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

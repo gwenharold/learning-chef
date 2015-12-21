@@ -45,9 +45,11 @@ public class AccountController {
 		return accountService.findAll();
 	}
 
+
 	@ExceptionHandler
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public void handleException(AccountNotFoundException e) {
 
 	}
+	
 }

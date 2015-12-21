@@ -22,6 +22,10 @@ public class BeanBuilderImpl implements BeanBuilder {
 			account.setId(accountBean.getId());
 		}
 		account.setUsername(accountBean.getUsername());
+		account.setFirstname(accountBean.getFirstname());
+		account.setLastname(accountBean.getLastname());
+		account.setEmail(accountBean.getEmail());
+
 		return account;
 		
 	}
