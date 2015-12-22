@@ -9,6 +9,8 @@ public interface AccountService {
 
 	AccountBean create(AccountBean accountBean);
 	
+	AccountBean update(AccountBean accountBean);
+	
 	AccountBean delete(String username);
 	
 	AccountBean find(String username);

@@ -29,7 +29,13 @@ public class AccountServiceImpl implements AccountService {
 		Account account = beanBuilder.convert(accountBean);
 		account = accountRepository.save(account);
 		return beanBuilder.build(account);
+	}
 
+	@Override
+	public AccountBean update(AccountBean accountBean) {
+		Account account = beanBuilder.convert(accountBean);
+		account = accountRepository.save(account);
+		return beanBuilder.build(account);
 	}
 
 	@Override
