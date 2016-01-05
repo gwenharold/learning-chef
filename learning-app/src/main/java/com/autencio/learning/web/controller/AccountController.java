@@ -30,6 +30,12 @@ public class AccountController {
 		return accountCreated;
 	}
 
+	@RequestMapping(value = "{username}", method = RequestMethod.PUT)
+	AccountBean update(@RequestBody AccountBean accountBean) {
+		AccountBean updated = accountService.update(accountBean);
+		return updated;
+	}
+
 	@RequestMapping(value = "{username}", method = RequestMethod.DELETE)
 	AccountBean delete(@PathVariable("username") String username) {
 		return accountService.delete(username);
@@ -44,7 +50,6 @@ public class AccountController {
 	List<AccountBean> findAll() {
 		return accountService.findAll();
 	}
-
 
 	@ExceptionHandler
 	@ResponseStatus(HttpStatus.NOT_FOUND)
